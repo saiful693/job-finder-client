@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginBanner from '../../assets/login-banner.svg'
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const {logIn}=useContext(AuthContext);
+    const location=useLocation();
+    const navigate=useNavigate();
 
     const handleLogIn=e=>{
         e.preventDefault();
@@ -19,6 +21,7 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             toast.success(`${user.displayName} is successfully login`);
+            navigate(location?.state ? location?.state : '/')
         })
         .catch(error=>{
             toast.error('Error in user login:', error);

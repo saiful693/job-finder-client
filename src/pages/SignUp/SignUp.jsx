@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginBanner from '../../assets/login-banner.svg'
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const SignUp = () => {
 
     const { createUser } = useContext(AuthContext);
+    const location=useLocation();
+    const navigate=useNavigate();
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -29,6 +31,7 @@ const SignUp = () => {
             });
             console.log(user);
             toast.success("User profile created successfully");
+            navigate(location?.state? location?.state: '/login')
         }catch(error){
             toast.error('Error creating user:', error);
         }
