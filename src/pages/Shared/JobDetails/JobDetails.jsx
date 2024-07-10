@@ -78,7 +78,7 @@ const JobDetails = () => {
             body: JSON.stringify(appliedJob),
         })
         .then(res => res.json())
-        .then(data=>{
+        .then(()=>{
             fetch(`http://localhost:5000/jobs/${_id}`,{
                 method: 'PATCH',
                 headers:{
@@ -93,9 +93,10 @@ const JobDetails = () => {
                         icon: "success",
                         title: "Your application submitted",
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 2000
                     });
                 }
+                setIsModalOpen(false)
             })
 
            
