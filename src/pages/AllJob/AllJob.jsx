@@ -66,7 +66,7 @@ const AllJob = () => {
                     <input onChange={handleSearchChange} className="p-3 w-full rounded-lg border-1 placeholder:font-semibold border-[#28395a]" type="text" placeholder="Search by job title" />
                 </div>
             </div>
-            <div className="w-3/4 mx-auto mt-16">
+            <div className="w-3/4 mx-auto my-16">
                 <div className="overflow-x-auto">
                     <table className="table">
                         <thead>
