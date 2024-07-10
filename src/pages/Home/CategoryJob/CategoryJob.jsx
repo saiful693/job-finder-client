@@ -15,7 +15,7 @@ const CategoryJob = () => {
     //    console.log(typeof(selectedTab))
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs?job_category=${selectedTab}`)
+        fetch(`http://localhost:5000/category-jobs?job_category=${selectedTab}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

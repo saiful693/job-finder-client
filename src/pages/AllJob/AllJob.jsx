@@ -41,7 +41,7 @@ const AllJob = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jobSearch?job_title=${search}`)
+        fetch(`http://localhost:5000/search-jobs?job_title=${search}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
