@@ -44,7 +44,7 @@ const Footer = () => {
                     </fieldset>
                 </form>
             </div>
-            <div className='flex justify-start gap-60 my-16'>
+            <div className='grid grid-cols-2 lg:flex lg:justify-start lg:gap-60 my-16'>
                 <img className='text-white' src="https://preview.colorlib.com/theme/jobfinderportal/assets/img/logo/logo2_footer.png.webp" />
                 <p><span className='text-2xl font-medium'>5000+</span> Talented Hunter</p>
                 <p><span className='text-2xl font-medium'>451+</span> Company</p>

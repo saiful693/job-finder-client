@@ -42,7 +42,7 @@ const SignUp = () => {
         <div>
             <img className='w-full bg-[#230939]' src={loginBanner} alt="" />
             <div className='flex justify-center'>
-                <div className='flex bg-white rounded-2xl py-10 justify-center w-1/2 -mt-52  z-10 '>
+                <div className='flex bg-white rounded-2xl py-10 justify-center w-full lg:w-1/2 lg:-mt-52  z-10 '>
                     <div className='w-3/4'>
                         <div className="text-center">
                             <h1 className="text-5xl font-bold">SignUp Here</h1>

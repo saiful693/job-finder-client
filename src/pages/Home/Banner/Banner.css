@@ -1,0 +1,15 @@
+#hero{
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        background-size: contain; /* Ensure the entire image is visible on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        padding: 10px; /* Reduce padding on very small screens */
+    }
+}

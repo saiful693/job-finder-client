@@ -15,7 +15,7 @@ const ApplyProcess = () => {
                     <h1 className="text-5xl font-bold mb-10">How it works</h1>
                     <div className='grid gap-6 grid-cols-1 md:grid-cols-3'>
                         {/* card 1 */}
-                        <div className="card bg-blue-900 w-96 shadow-xl">
+                        <div className="card bg-blue-900 mx-2 lg:w-96 shadow-xl">
                              <figure className="px-10 pt-8">
                              <motion.div
                                 style={{ width: '200px', height: '200px', perspective: '1000px' }}
@@ -39,7 +39,7 @@ const ApplyProcess = () => {
                             </div>
                         </div>
                         {/* card 2 */}
-                        <div className="card bg-blue-900 w-96 shadow-xl">
+                        <div className="card mx-2 bg-blue-900 lg:w-96 shadow-xl">
                              <figure className="px-10 pt-8">
                              <motion.div
                                 style={{ width: '200px', height: '200px', perspective: '1000px' }}
@@ -63,7 +63,7 @@ const ApplyProcess = () => {
                             </div>
                         </div>
                         {/* card 3 */}
-                        <div className="card bg-blue-900 w-96 shadow-xl">
+                        <div className="card mx-2 bg-blue-900 lg:w-96 shadow-xl">
                              <figure className="px-10 pt-8">
                              <motion.div
                                 style={{ width: '200px', height: '200px', perspective: '1000px' }}

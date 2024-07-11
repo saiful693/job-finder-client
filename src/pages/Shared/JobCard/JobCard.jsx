@@ -19,7 +19,7 @@ const JobCard = ({job}) => {
         }
     }
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-base-100 lg:w-96 shadow-xl">
             <figure >
                 <img className="w-full h-48"
                     src={job_picture}
@@ -29,7 +29,7 @@ const JobCard = ({job}) => {
                 <h2 className="card-title">
                     {job_title}
                     
-                    <div className="badge badge-secondary">Applicants-{job_Applicants}</div>
+                    <div className="badge w-36 md:w-44 badge-secondary">Applicants-{job_Applicants}</div>
                 </h2>
                 <p>Posted by: <strong>{user_name}</strong></p>
                 <p>Posting Date: <strong>{new Date(job_PostingDate).toLocaleDateString()}</strong></p>

@@ -54,7 +54,7 @@ const AppliedJob = () => {
             }}>
             <div className="flex justify-center mt-16">
                 <div className="max-w-md text-center">
-                    <h1 className="mb-5 text-5xl font-bold">Applied Job</h1>
+                    <h1 className="mb-5 text-3xl lg:text-5xl font-bold">Applied Job</h1>
                 </div>
             </div>
 
@@ -73,24 +73,24 @@ const AppliedJob = () => {
                 <div className="overflow-x-auto">
                     <table className="table">
                         <thead>
-                            <tr className="text-xl text-[#28395a] font-semibold">
+                            <tr className="md:text-lg lg:text-xl text-[#28395a] font-semibold">
                                 <th>Job Title</th>
                                 <th>Job Category</th>
-                                <th>Description</th>
+                                <th className="hidden lg:table-cell">Description</th>
                                 <th>Salary Range</th>
-                                <th>Posting Date</th>
-                                <th>Resume Link</th> 
+                                <th className="hidden md:table-cell">Posting Date</th>
+                                <th className="hidden lg:table-cell">Resume Link</th> 
                             </tr>
                         </thead>
                         <tbody className="space-y-3">
                             {
-                                appliedJob?.map(job => <tr className="h-32 mb-4 text-lg border-1 border-blue-200 space-y-3 hover:bg-gray-300" key={job._id}>
+                                appliedJob?.map(job => <tr className="h-32 mb-4 md:text-lg border-1 border-blue-200 space-y-3 hover:bg-gray-300" key={job._id}>
                                     <td>{job.job_title}</td>
                                     <td>{job.job_category}</td>
-                                    <td>{job.job_desc}</td>
+                                    <td className="hidden lg:table-cell">{job.job_desc}</td>
                                     <td>{job.salary_range}</td>
-                                    <td>{dateFormater(job.job_PostingDate)}</td>
-                                    <td>{job.resumeLink}</td>
+                                    <td className="hidden md:table-cell">{dateFormater(job.job_PostingDate)}</td>
+                                    <td className="hidden lg:table-cell">{job.resumeLink}</td>
                                     
                                     {/* <td><strong>{dateFormater(job.application_Deadline)}</strong></td> */}
 

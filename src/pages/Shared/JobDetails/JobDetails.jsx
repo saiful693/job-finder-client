@@ -59,49 +59,53 @@ const JobDetails = () => {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '50%',
+            width: '80%',
+            maxWidth: '100%',
             padding: '50px',
+            maxHeight: '90vh',
+            overflowY: 'auto',
         },
     };
+
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const resumeLink = form.resumeLink.value;
-        const appliedJob={ job_id:_id, job_title, job_category, job_desc, salary_range, user_name:user.displayName, user_email:user.email, resumeLink, job_PostingDate}
+        const appliedJob = { job_id: _id, job_title, job_category, job_desc, salary_range, user_name: user.displayName, user_email: user.email, resumeLink, job_PostingDate }
 
-        fetch('http://localhost:5000/appliedJob',{
+        fetch('http://localhost:5000/appliedJob', {
             method: 'POST',
-            headers:{
+            headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(appliedJob),
         })
-        .then(res => res.json())
-        .then(()=>{
-            fetch(`http://localhost:5000/jobs/${_id}`,{
-                method: 'PATCH',
-                headers:{
-                    'content-type': 'application/json'
-                },
-            })
             .then(res => res.json())
-            .then(data =>{
-                if (data.modifiedCount) {
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Your application submitted",
-                        showConfirmButton: false,
-                        timer: 2000
-                    });
-                }
-                setIsModalOpen(false)
-            })
+            .then(() => {
+                fetch(`http://localhost:5000/jobs/${_id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.modifiedCount) {
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Your application submitted",
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                        }
+                        setIsModalOpen(false)
+                    })
 
-           
-        })
+
+            })
 
     }
 
@@ -121,8 +125,8 @@ const JobDetails = () => {
                 </div>
             </div>
             {/*  */}
-            <div className='max-w-7xl mx-auto mt-20 flex justify-between'>
-                <div className='w-1/2'>
+            <div className='max-w-7xl mx-auto space-y-4 p-2 my-20 flex flex-col md:flex-row justify-between'>
+                <div className='md:w-1/2'>
                     <div className='flex items-center gap-12'>
                         <img className='w-48 h-32' src={job_picture} alt="" />
                         <div className='space-y-4'>
@@ -139,7 +143,7 @@ const JobDetails = () => {
                     </div>
                 </div>
                 {/* 2nd div */}
-                <div className='border p-6 w-2/5 space-y-5'>
+                <div className='border p-6 md:w-2/5 space-y-5'>
                     <h4 className='text-lg font-semibold'>Job OverView</h4>
                     <div>
                         <div className='flex justify-between'>
@@ -163,33 +167,34 @@ const JobDetails = () => {
                             onRequestClose={() => setIsModalOpen(false)}
                             style={customStyles}
                         >
-                            <h3 className="font-bold text-lg">Apply for Job</h3>
-                            <form onSubmit={handleSubmit}>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">User Name</span>
-                                    </label>
-                                    <input type="text" value={user.displayName} className="input input-bordered" readOnly />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input type="email" value={user.email} className="input input-bordered" readOnly />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Resume Link:</span>
-                                    </label>
-                                    <input type="url" name='resumeLink' className="input input-bordered" required />
-                                </div>
-                                <button className='btn mt-5 text-white bg-[#FB246A] btn-md' type="submit">Submit Application</button>
-                            </form>
+                            <div className=''>
+                                <h3 className="font-bold text-lg">Apply for Job</h3>
+                                <form onSubmit={handleSubmit}>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">User Name</span>
+                                        </label>
+                                        <input type="text" value={user.displayName} className="input input-bordered" readOnly />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Email</span>
+                                        </label>
+                                        <input type="email" value={user.email} className="input input-bordered" readOnly />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Resume Link:</span>
+                                        </label>
+                                        <input type="url" name='resumeLink' className="input input-bordered" required />
+                                    </div>
+                                    <button className='btn mt-5 text-white bg-[#FB246A] btn-md' type="submit">Submit Application</button>
+                                </form>
 
-                            <div className="modal-action">
-                                <button className='btn ' onClick={() => setIsModalOpen(false)}>Close</button>
+                                <div className="modal-action">
+                                    <button className='btn ' onClick={() => setIsModalOpen(false)}>Close</button>
+                                </div>
                             </div>
-
                         </Modal>
 
                     </div>

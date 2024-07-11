@@ -49,7 +49,7 @@ const MyJobs = () => {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '50%',
+            width: '80%',
             padding: '50px',
             maxHeight: '80vh',
             overflowY: 'auto',
@@ -149,30 +149,34 @@ const MyJobs = () => {
             }}>
             <div className="flex justify-center mt-16">
                 <div className="max-w-md text-center">
-                    <h1 className="mb-5 text-5xl font-bold">My Jobs</h1>
+                    <h1 className="mb-5 text-3xl lg:text-5xl font-bold">My Jobs</h1>
                 </div>
             </div>
             <div className="w-3/4 mx-auto">
                 <div className="overflow-x-auto">
                     <table className="table">
                         <thead>
-                            <tr className="text-xl text-[#28395a] font-semibold">
+                            <tr className="lg:text-xl text-[#28395a] font-semibold">
                                 <th>Job Title</th>
-                                <th>Posting Date</th>
-                                <th>Salary Range</th>
+                                <th className="hidden md:table-cell">Posting Date</th>
+                                <th className="hidden lg:table-cell">Salary Range</th>
                                 <th>Application Deadline</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody className="space-y-3">
                             {
-                                jobs?.map(job => <tr className="h-32 mb-4 text-lg border-1 border-blue-200 space-y-3 hover:bg-gray-300" key={job._id}>
+                                jobs?.map(job => <tr className="h-32 mb-4 lg:text-lg border-1 border-blue-200 lg:space-y-3 hover:bg-gray-300" key={job._id}>
                                     <td>{job.job_title}</td>
-                                    <td>{dateFormater(job.job_PostingDate)}</td>
-                                    <td>{job.salary_range}</td>
+                                    <td className="hidden md:table-cell">{dateFormater(job.job_PostingDate)}</td>
+                                    <td className="hidden lg:table-cell">{job.salary_range}</td>
                                     <td><strong>{dateFormater(job.application_Deadline)}</strong></td>
-                                    <td><button onClick={() => handleUpdateClick(job._id)} className='btn btn-block text-white bg-[#28395a] hover:bg-green-400'>Update</button></td>
-                                    <td><button onClick={() => handleDelete(job._id)} className='btn btn-block text-white bg-red-400 hover:bg-red-600'>Delete</button></td>
+                                    <td>
+                                        <button onClick={() => handleUpdateClick(job._id)} className='btn btn-sm lg:btn-md btn-block text-white bg-[#28395a] hover:bg-green-400'>Update</button>
+                                        <button onClick={() => handleDelete(job._id)} className='btn btn-sm lg:btn-md btn-block  text-white bg-red-400 hover:bg-red-600'>Delete</button>
+                                       
+                                    </td>
+                                   
                                 </tr>)
                             }
                         </tbody>

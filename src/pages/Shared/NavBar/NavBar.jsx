@@ -68,7 +68,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
-                    <img src={logo} alt="" />
+                    <img className="w-32 lg:w-1/2" src={logo} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul id="nav" className="menu-horizontal space-x-5 font-medium text-[#252b60]  px-1">
@@ -81,7 +81,7 @@ const NavBar = () => {
 
                     {
                         user?.email ?
-                            <div className="flex gap-4">
+                            <div className="flex lg:gap-4">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} alt="user-icon" src={user.photoURL} />

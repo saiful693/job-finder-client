@@ -58,8 +58,8 @@ const AllJob = () => {
                 backgroundImage: `url(${banner_img})`,
             }}>
             <div className="flex justify-center mt-16">
-                <div className="max-w-md text-center">
-                    <h1 className="mb-5 text-5xl font-bold">View All Jobs</h1>
+                <div className="max-w-md text-center p-2 ">
+                    <h1 className="mb-5 text-3xl md:text-5xl font-bold">View All Jobs</h1>
                     <p className="mb-5">
                         Looking for jobs? Browse our latest job openings to view & apply to the best jobs today!
                     </p>
@@ -72,9 +72,9 @@ const AllJob = () => {
                         <thead>
                             <tr className="text-xl text-[#28395a] font-semibold">
                                 <th>Job Title</th>
-                                <th>Posting Date</th>
-                                <th>Salary Range</th>
-                                <th>Application Deadline</th>
+                                <th className="hidden lg:table-cell">Posting Date</th>
+                                <th className="hidden lg:table-cell">Salary Range</th>
+                                <th className="hidden md:table-cell">Application Deadline</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -82,9 +82,9 @@ const AllJob = () => {
                             {
                                 jobs?.map(job => <tr className="h-32 mb-4 text-lg border-1 border-blue-200 space-y-3 hover:bg-gray-300" key={job._id}>
                                     <td>{job.job_title}</td>
-                                    <td>{dateFormater(job.job_PostingDate)}</td>
-                                    <td>{job.salary_range}</td>
-                                    <td><strong>{dateFormater(job.application_Deadline)}</strong></td>
+                                    <td className="hidden lg:table-cell">{dateFormater(job.job_PostingDate)}</td>
+                                    <td className="hidden lg:table-cell">{job.salary_range}</td>
+                                    <td className="hidden md:table-cell"><strong>{dateFormater(job.application_Deadline)}</strong></td>
                                     <td><Link to={`/jobDetails/${job._id}`}><button onClick={handleCard} className="btn  bg-primary text-white">View Details</button></Link></td>
                                 </tr>)
                             }

@@ -10,11 +10,13 @@ import AllJob from "../pages/AllJob/AllJob";
 import Blogs from "../pages/Blogs/Blogs";
 import MyJobs from "../pages/MyJobs/MyJobs";
 import AppliedJob from "../pages/AppliedJob/AppliedJob";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',

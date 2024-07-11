@@ -49,10 +49,10 @@ const AddAJob = () => {
         <div>
             <img className='w-full bg-[#230939]' src={loginBanner} alt="" />
             <div className='flex justify-center'>
-                <div className='flex bg-white rounded-2xl py-10 justify-center w-1/2 -mt-52  z-10 '>
+                <div className='flex bg-white rounded-2xl py-10 justify-center w-full lg:w-1/2 lg:-mt-52  z-10 '>
                     <div className='w-3/4'>
                         <div className="text-center mb-6">
-                            <h1 className="text-5xl font-bold">Add A Job</h1>
+                            <h1 className="text-3xl lg:text-5xl font-bold">Add A Job</h1>
                         </div>
                         <div className="card  w-full  shrink-0 shadow-2xl">
                             <form onSubmit={handleAddJob} className="card-body pb-0">
