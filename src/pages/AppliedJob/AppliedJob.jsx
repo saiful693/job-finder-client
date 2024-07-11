@@ -10,7 +10,7 @@ const AppliedJob = () => {
 
     const handleCategory = (event) => {
         setCategory(event.target.value);
-        console.log(event.target.value)
+        // console.log(event.target.value)
     };
 
     
@@ -27,13 +27,13 @@ const AppliedJob = () => {
 
     useEffect(() => {
         if (!category) {
-            fetch(`http://localhost:5000/appliedJob?user_email=${user.email}`)
+            fetch(`https://job-finder-server-indol.vercel.app/appliedJob?user_email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setAppliedJob(data) 
         })
         }else{
-            fetch(`http://localhost:5000/appliedJob?user_email=${user.email}&job_category=${category}`)
+            fetch(`https://job-finder-server-indol.vercel.app/appliedJob?user_email=${user.email}&job_category=${category}`)
             .then(res => res.json())
             .then(data => {
                 setAppliedJob(data) 

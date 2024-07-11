@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/all-jobs',
                 element: <AllJob></AllJob>,
-                loader: ()=>fetch('http://localhost:5000/jobs')
+                loader: ()=>fetch('https://job-finder-server-indol.vercel.app/jobs')
             },
             {
                 path: '/add-a-job',
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
             {
                 path: '/jobDetails/:id',
                 element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-                loader: ({ params} ) =>fetch(`http://localhost:5000/jobDetails/${params.id}`)    
+                loader: ({ params} ) =>fetch(`https://job-finder-server-indol.vercel.app/jobDetails/${params.id}`)    
             },
             {
                 path: '/blogs',

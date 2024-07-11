@@ -16,14 +16,14 @@ const CategoryJob = () => {
 
     useEffect(() => {
         if(selectedTab === 'All Jobs'){
-            fetch('http://localhost:5000/jobs')
+            fetch('https://job-finder-server-indol.vercel.app/jobs')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setJobs(data);
             })
         }else{
-            fetch(`http://localhost:5000/category-jobs?job_category=${selectedTab}`)
+            fetch(`https://job-finder-server-indol.vercel.app/category-jobs?job_category=${selectedTab}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

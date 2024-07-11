@@ -75,7 +75,7 @@ const JobDetails = () => {
         const resumeLink = form.resumeLink.value;
         const appliedJob = { job_id: _id, job_title, job_category, job_desc, salary_range, user_name: user.displayName, user_email: user.email, resumeLink, job_PostingDate }
 
-        fetch('http://localhost:5000/appliedJob', {
+        fetch('https://job-finder-server-indol.vercel.app/appliedJob', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const JobDetails = () => {
         })
             .then(res => res.json())
             .then(() => {
-                fetch(`http://localhost:5000/jobs/${_id}`, {
+                fetch(`https://job-finder-server-indol.vercel.app/jobs/${_id}`, {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

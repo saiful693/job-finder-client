@@ -29,7 +29,7 @@ const SignUp = () => {
                 displayName: name,
                 photoURL: photo,
             });
-            console.log(user);
+            // console.log(user);
             toast.success("User profile created successfully");
             navigate(location?.state? location?.state: '/login')
         }catch(error){

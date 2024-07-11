@@ -23,7 +23,7 @@ const AddAJob = () => {
 
         const new_job = { job_picture, job_title, user_name, user_email, job_category, salary_range, job_desc, job_Applicants, job_PostingDate, application_Deadline };
 
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://job-finder-server-indol.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
+
+
 const AllJob = () => {
     const { user } = useContext(AuthContext)
     const [jobs, setJobs] = useState(null)
@@ -41,10 +43,10 @@ const AllJob = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/search-jobs?job_title=${search}`)
+        fetch(`https://job-finder-server-indol.vercel.app/search-jobs?job_title=${search}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setJobs(data);
             })
     }, [search])
@@ -57,6 +59,7 @@ const AllJob = () => {
             style={{
                 backgroundImage: `url(${banner_img})`,
             }}>
+           
             <div className="flex justify-center mt-16">
                 <div className="max-w-md text-center p-2 ">
                     <h1 className="mb-5 text-3xl md:text-5xl font-bold">View All Jobs</h1>

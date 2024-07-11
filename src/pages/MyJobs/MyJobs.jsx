@@ -31,7 +31,7 @@ const MyJobs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-jobs?user_email=${user.email}`)
+        fetch(`https://job-finder-server-indol.vercel.app/my-jobs?user_email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
@@ -60,7 +60,7 @@ const MyJobs = () => {
 
     const handleUpdateClick = async(id) => {
         console.log(id)
-       await fetch(`http://localhost:5000/jobDetails/${id}`)
+       await fetch(`https://job-finder-server-indol.vercel.app/jobDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSelectedJob(data)
@@ -86,7 +86,7 @@ const MyJobs = () => {
         const updated_job = { job_picture, job_title, job_category, salary_range, job_desc, job_Applicants, job_PostingDate, application_Deadline }
 
 
-        fetch(`http://localhost:5000/my-jobs/${selectedJob._id}`, {
+        fetch(`https://job-finder-server-indol.vercel.app/my-jobs/${selectedJob._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -120,7 +120,7 @@ const MyJobs = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/jobs/${id}`, {
+                fetch(`https://job-finder-server-indol.vercel.app/jobs/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
