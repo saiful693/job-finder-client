@@ -10,7 +10,8 @@ import Swal from 'sweetalert2';
 const JobDetails = () => {
     const job = useLoaderData();
     const { user } = useContext(AuthContext);
-    const {_id, job_picture, job_title, user_name, user_email, job_category, salary_range, job_desc, job_Applicants, job_PostingDate, application_Deadline } = job;
+    const { _id, job_picture, job_title, user_name, job_category, salary_range, job_desc, job_Applicants, job_PostingDate, application_Deadline } = job;
+
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -68,7 +69,7 @@ const JobDetails = () => {
         e.preventDefault();
         const form = e.target;
         const resumeLink = form.resumeLink.value;
-        const appliedJob={ job_id:_id, user_name, user_email, job_title, resumeLink}
+        const appliedJob={ job_id:_id, job_title, job_category, job_desc, salary_range, user_name:user.displayName, user_email:user.email, resumeLink, job_PostingDate}
 
         fetch('http://localhost:5000/appliedJob',{
             method: 'POST',
@@ -119,7 +120,6 @@ const JobDetails = () => {
                     </div>
                 </div>
             </div>
-
             {/*  */}
             <div className='max-w-7xl mx-auto mt-20 flex justify-between'>
                 <div className='w-1/2'>
@@ -169,13 +169,13 @@ const JobDetails = () => {
                                     <label className="label">
                                         <span className="label-text">User Name</span>
                                     </label>
-                                    <input type="text" value={user_name} className="input input-bordered" readOnly />
+                                    <input type="text" value={user.displayName} className="input input-bordered" readOnly />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" value={user_email} className="input input-bordered" readOnly />
+                                    <input type="email" value={user.email} className="input input-bordered" readOnly />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">

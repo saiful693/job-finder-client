@@ -9,19 +9,19 @@ const JobCard = ({job}) => {
     const {user}=useContext(AuthContext)
     const handleCard=()=>{
         if(!user){
-            Swal.fire({
-                position: "top-end",
-                icon: "error",
-                title: "You have to log in first to view details",
-                showConfirmButton: false,
-                timer: 2500
-            });
+                 Swal.fire({
+                        position: "top-end",
+                        title: 'Error!',
+                        text: 'You have to log in first to view details',
+                        icon: "error",
+                        confirmButtonText: 'Cool'
+                    });
         }
     }
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
-            <figure>
-                <img
+            <figure >
+                <img className="w-full h-48"
                     src={job_picture}
                     alt="job-banner" />
             </figure>
@@ -35,7 +35,7 @@ const JobCard = ({job}) => {
                 <p>Posting Date: <strong>{new Date(job_PostingDate).toLocaleDateString()}</strong></p>
                 <p>Application Deadline: <strong className="text-red-400">{new Date(application_Deadline).toLocaleDateString()}</strong></p>
                 <p className="">Salary Range: <strong className="text-[#28395a]">{salary_range}</strong></p>
-                <div className="card-actions justify-end">
+                <div className="card-actions ">
                     <Link to={`/jobDetails/${_id}`}><button onClick={handleCard} className="btn btn-block bg-primary text-white">View Details</button></Link>
                 </div>
             </div>

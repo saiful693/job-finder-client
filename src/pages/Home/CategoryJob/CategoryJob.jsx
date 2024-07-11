@@ -40,7 +40,7 @@ const CategoryJob = () => {
 
                 <TabPanel>
                     {jobs.length > 0 ? (
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                             {
                                 jobs.map(job => <JobCard key={job._id} job={job}></JobCard>)
                             }
@@ -51,7 +51,7 @@ const CategoryJob = () => {
                 </TabPanel>
                 <TabPanel>
                     {jobs.length > 0 ? (
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                             {
                                 jobs.map(job => <JobCard key={job._id} job={job}></JobCard>)
                             }
@@ -62,7 +62,7 @@ const CategoryJob = () => {
                 </TabPanel>
                 <TabPanel>
                     {jobs.length > 0 ? (
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                             {
                                 jobs.map(job => <JobCard key={job._id} job={job}></JobCard>)
                             }
@@ -73,7 +73,7 @@ const CategoryJob = () => {
                 </TabPanel>
                 <TabPanel>
                     {jobs.length > 0 ? (
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                             {
                                 jobs.map(job => <JobCard key={job._id} job={job}></JobCard>)
                             }

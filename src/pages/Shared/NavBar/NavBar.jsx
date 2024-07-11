@@ -29,7 +29,7 @@ const NavBar = () => {
         <li className="hover:text-[#FB246A]"><NavLink to="/all-jobs">All Jobs</NavLink></li>
         {
             user?.email ? <>
-                <li className="hover:text-[#FB246A]"><NavLink to="/applied-jobs">Applied Jobs</NavLink></li>
+                <li className="hover:text-[#FB246A]"><NavLink to="/applied-job">Applied Jobs</NavLink></li>
                 <li className="hover:text-[#FB246A]"><NavLink to="/add-a-job">Add A Job</NavLink></li>
                 <li className="hover:text-[#FB246A]"><NavLink to="/my-jobs">My Jobs</NavLink></li>
             </>

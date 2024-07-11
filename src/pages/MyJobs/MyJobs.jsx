@@ -172,7 +172,7 @@ const MyJobs = () => {
                                     <td>{job.salary_range}</td>
                                     <td><strong>{dateFormater(job.application_Deadline)}</strong></td>
                                     <td><button onClick={() => handleUpdateClick(job._id)} className='btn btn-block text-white bg-[#28395a] hover:bg-green-400'>Update</button></td>
-                                    <td><button onClick={() => handleDelete(job._id)} className='btn btn-block text-white bg-red-400 hover:bg-red-600'>Update</button></td>
+                                    <td><button onClick={() => handleDelete(job._id)} className='btn btn-block text-white bg-red-400 hover:bg-red-600'>Delete</button></td>
                                 </tr>)
                             }
                         </tbody>
